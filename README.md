@@ -30,7 +30,7 @@ This implementation requires MATLAB 2018b or a more recent version.
      4. At the end of the optimization, the data of optimal parameters will be saved in an Excel file (check "mpc_param" to know which file) 
        
 
-### You might want to check a closely related implementation in this repository (https://github.com/yassinekebbati/NN_MPC-vs-ANFIS_MPC)
+### You might want to check a closely related implementation in this repository (https://github.com/yassinekebbati/GA-optimized-MLP-based-LPV_MPC)
 
 ### If you find this work useful or use it in your work, please cite the main paper:
 
