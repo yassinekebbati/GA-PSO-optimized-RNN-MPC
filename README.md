@@ -1,0 +1,1 @@
+This is the implementation of the work published in the following artical "RNN-based linear parameter varying adaptive model predictive control for autonomous driving". The artical is freely accessible at this link: https://univ-evry.hal.science/hal-04745066/document
