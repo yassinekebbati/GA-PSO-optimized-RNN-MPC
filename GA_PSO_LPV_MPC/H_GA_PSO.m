@@ -16,7 +16,7 @@ function out = H_GA_PSO(problem, params,problem2, params2)
     VarMax = problem.VarMax;
     
     %%PSO Definition
-    CostFunction2 = problem2.CostFunction;  % Cost Function
+    % CostFunction2 = problem2.CostFunction2;  % Cost Function
     nVar2 = problem2.nVar;     % Number of Unknown (Decision) Variables
     VarSize2 = [1 nVar2];    %Matrix Size of Decision Variables
     VarMin2 = problem2.VarMin;          %Lower Bound of Decision Variables
@@ -38,8 +38,8 @@ function out = H_GA_PSO(problem, params,problem2, params2)
     
 
     %%Parameters of PSO
-    MaxIt2 = params2.MaxIt;     %Maximum Number of Iterations
-    nPop2 = params2.nPop;       %Population size (swarm size)
+    % MaxIt2 = params2.MaxIt;     %Maximum Number of Iterations
+    % nPop2 = params2.nPop;       %Population size (swarm size)
     w = params2.w;           % inertia coefficient
     wdamp = params2.wdamp;     % Damping Ratio of Inertia Weight
     c1 = params2.c1;          %Personal acceleration coefficient

@@ -18,8 +18,6 @@ load DLCwind_data
 %% Problem Definition GA
 problem.CostFunction = @(x) LPV_MPC(x,xmean, xstdev, ymean,ystdev, mod, Ts, UU, XX, XP, YP, THETAP,v_wind);
 problem.nVar = 7;
-% problem.VarMin = [0.05 0.001 0.001 0.01 0.001 0.005 0.002];
-% problem.VarMax = [0.1 0.05 0.05 1.5 0.05 0.2 0.15];
 problem.VarMin = [0.5 0.00001 0.01 10 0.001 0.003 0.0001];
 problem.VarMax = [50 0.01 0.05 100 10 1 0.02];
 
@@ -27,7 +25,7 @@ problem.VarMax = [50 0.01 0.05 100 10 1 0.02];
 
 %%Problem Definition PSO
 
-% problem2.CostFunction = @(x) Sphere(x);  % Cost Function
+% problem2.CostFunction2 = @(x) Sphere(x);  % Cost Function
 problem2.nVar = 7;     % Number of Unknown (Decision) Variables
 problem2.VarMin = [0.5 0.00001 0.01 10 0.001 0.003 0.0001];
 problem2.VarMax = [50 0.01 0.05 100 10 1 0.02];
@@ -67,7 +65,6 @@ params2.ShowIterInfo = true;  %Flag for showing Iteration
 
 %% Calling PSO
 out = H_GA_PSO(problem, params,problem2, params2);
-
 BestSol = out.BestSol
 BestCosts = out.BestCosts;
 
@@ -76,47 +73,7 @@ BestCosts = out.BestCosts;
 %% Results GA-PSO
 
 figure(1);
-%plot(BestCosts, 'LineWidth',2);
 semilogy(BestCosts, 'LineWidth',2);
-xlabel('Iteration');
-ylabel('Best Cost');
-grid on;
-
-
-
-
-
-
-
-% Results GA
-
-figure(2);
-% plot(out.bestcost, 'Linewidth' , 2);
-semilogy(out.bestcost,'r', 'Linewidth' , 2); hold on;
-xlabel('Iteration');
-ylabel('Best Cost');
-grid on;
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
-% load x
-
-%% Run GA 
-
-% out =RunGA(problem, params);
-% out =RunGA2(problem, params);
-out =RunGA3(problem, params);
-
-%% Results
-
-figure;
-% plot(out.bestcost, 'Linewidth' , 2);
-semilogy(out.bestcost, 'Linewidth' , 2); hold on;
 xlabel('Iteration');
 ylabel('Best Cost');
 grid on;
